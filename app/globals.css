@@ -1,0 +1,135 @@
+@config "../tailwind.config.ts";
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --ghost-border: rgba(73, 72, 71, 0.15);
+  --glass-fill: rgba(26, 25, 25, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #0e0e0e;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(163, 255, 18, 0.08), transparent 32%),
+    #0e0e0e;
+  color: #ffffff;
+  font-family: var(--font-manrope), sans-serif;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+summary {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid #a3ff12;
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #a3ff12;
+  color: #3d6500;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.kinetic-gradient {
+  background-image: linear-gradient(135deg, #a3ff12 0%, #8ee600 100%);
+}
+
+.obsidian-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(163, 255, 18, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+.glass-panel {
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+}
+
+.ghost-border {
+  border: 1px solid var(--ghost-border);
+}
+
+.label-kicker {
+  font-family: var(--font-space-grotesk), sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  transform: translateY(-200%);
+  border-radius: 9999px;
+  background: #a3ff12;
+  color: #2b4900;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.875rem 1.25rem;
+  text-transform: uppercase;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

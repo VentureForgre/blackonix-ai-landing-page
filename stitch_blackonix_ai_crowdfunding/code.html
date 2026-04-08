@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BLACKONIX AI | Sustainable Flat-Fee Open-Source Hosting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #A3FF12 0%, #8ee600 100%);
+        }
+        .obsidian-glow {
+            background: radial-gradient(circle at center, rgba(163, 255, 18, 0.08) 0%, transparent 70%);
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#131313",
+                        "surface-container-high": "#201f1f",
+                        "outline": "#777575",
+                        "primary": "#A3FF12",
+                        "on-background": "#ffffff",
+                        "primary-dim": "#8ee600",
+                        "on-secondary-container": "#d2d0cf",
+                        "surface-bright": "#2c2c2c",
+                        "surface-container-highest": "#262626",
+                        "inverse-on-surface": "#565554",
+                        "primary-fixed": "#A3FF12",
+                        "on-tertiary": "#516700",
+                        "on-primary-container": "#375b00",
+                        "error": "#ff7351",
+                        "secondary": "#e5e2e1",
+                        "surface-container": "#1a1919",
+                        "tertiary": "#f3ffca",
+                        "on-secondary": "#525151",
+                        "on-primary-fixed-variant": "#3f6800",
+                        "background": "#0e0e0e",
+                        "surface-container-lowest": "#000000",
+                        "error-dim": "#d53d18",
+                        "on-error-container": "#ffd2c8",
+                        "tertiary-fixed": "#cafd00",
+                        "on-surface": "#ffffff",
+                        "secondary-dim": "#d6d4d3",
+                        "on-surface-variant": "#adaaaa",
+                        "error-container": "#b92902",
+                        "on-primary": "#3d6500",
+                        "surface-variant": "#262626",
+                        "on-primary-fixed": "#2b4900",
+                        "inverse-primary": "#416a00",
+                        "tertiary-fixed-dim": "#beee00",
+                        "secondary-container": "#474746",
+                        "primary-fixed-dim": "#8ee600",
+                        "on-tertiary-fixed-variant": "#526900",
+                        "on-secondary-fixed-variant": "#5c5b5b",
+                        "tertiary-container": "#cafd00",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-dim": "#0e0e0e",
+                        "on-tertiary-fixed": "#3a4a00",
+                        "on-tertiary-container": "#4a5e00",
+                        "primary-container": "#A3FF12",
+                        "tertiary-dim": "#beee00",
+                        "surface-tint": "#A3FF12",
+                        "surface": "#0e0e0e",
+                        "on-error": "#450900",
+                        "outline-variant": "#494847",
+                        "on-secondary-fixed": "#403f3f",
+                        "secondary-fixed-dim": "#d6d4d3",
+                        "inverse-surface": "#fcf8f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center px-8 py-5 max-w-7xl mx-auto">
+<div class="text-xl font-black tracking-tighter text-white">BLACKONIX AI</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label tracking-widest text-[10px] uppercase text-primary font-bold border-b border-primary pb-1" href="#">The Mission</a>
+<a class="font-label tracking-widest text-[10px] uppercase text-neutral-400 hover:text-white transition-colors" href="#">Models</a>
+<a class="font-label tracking-widest text-[10px] uppercase text-neutral-400 hover:text-white transition-colors" href="#">Privacy</a>
+<a class="font-label tracking-widest text-[10px] uppercase text-neutral-400 hover:text-white transition-colors" href="#">Pricing</a>
+</div>
+<button class="kinetic-gradient px-6 py-2.5 rounded text-on-primary font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all active:scale-95">
+            Back the Vision
+        </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+<div class="absolute inset-0 obsidian-glow -z-10"></div>
+<div class="absolute top-1/4 -left-24 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="max-w-5xl mx-auto text-center space-y-10">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-highest border border-white/5 backdrop-blur-md">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-primary">Founding Phase Live</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.85] text-on-surface">
+                A New Standard in <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">Flat-Fee AI.</span>
+</h1>
+<p class="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant font-light leading-relaxed">
+                Sustainable hosting for elite open-source models. Access Qwen 2.5 and DeepSeek V3 for a predictable monthly fee. No metered billing. No surprises.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10">
+<a class="kinetic-gradient px-12 py-5 rounded text-on-primary font-extrabold text-lg transition-transform hover:scale-105 active:scale-95 shadow-[0_0_50px_rgba(163,255,18,0.2)]" href="#crowdfunding">
+                    Fuel the Infrastructure
+                </a>
+<button class="px-12 py-5 rounded bg-surface-container-highest text-white font-bold text-lg border border-white/5 hover:bg-surface-bright transition-colors">
+                    View Infrastructure
+                </button>
+</div>
+</div>
+<!-- Concurrency Disclosure -->
+<div class="mt-20 max-w-lg mx-auto text-center">
+<div class="flex items-center justify-center gap-2 text-neutral-500 mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="balance">balance</span>
+<p class="font-label text-[9px] uppercase tracking-[0.2em]">Balanced Performance for All</p>
+</div>
+<p class="text-[11px] text-neutral-500 font-light px-8">To ensure consistent low-latency for every backer, we maintain transparent concurrency limits per tier. No hidden throttling—just fair access to high-compute clusters.</p>
+</div>
+<!-- Bento Preview -->
+<div class="mt-20 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 aspect-[21/9] rounded-xl bg-surface-container-low overflow-hidden relative border border-white/5">
+<img alt="Futuristic server room" class="w-full h-full object-cover opacity-40 grayscale hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsXxt7ejJnD6qermOGrUYDFpBCYLIjZ19LWcWV7FMdojeZ4LlB1Et0vHmtFeSoZSL6WZDG7uiUytp2ZqGIjJDajNKvNiG4vNIXq07TwVQp4ldsNlYorb1GVSbw0g0NR1yZm9XWqccRPziNyWhp2LklwRBp4ChhRg37epnsYFbFa2fiMngjPEuN0oR4sbfvLriztRmFs21d3PG-fTV9K8Ci80LhQqruk_2bvdgxunTBCIk7wHWiot_2NZUqzkCwKwUpUTcIj1dgY1s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10">
+<p class="font-label text-[10px] uppercase tracking-[0.4em] text-primary mb-3">Managed Capacity</p>
+<h3 class="text-3xl font-bold tracking-tight">Dedicated GPU Clusters</h3>
+</div>
+</div>
+<div class="aspect-square rounded-xl bg-surface-container-high p-10 flex flex-col justify-end border border-white/5">
+<span class="material-symbols-outlined text-primary text-5xl mb-6" data-icon="terminal">terminal</span>
+<h3 class="text-2xl font-bold mb-3 tracking-tight">API Native</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Standard OpenAI-compatible endpoints for immediate integration into your production stack.</p>
+</div>
+</div>
+</section>
+<!-- NEW: Crowdfunding Campaign Section -->
+<section class="py-40 px-6 relative overflow-hidden" id="crowdfunding">
+<div class="absolute inset-0 bg-primary/5 -z-10"></div>
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<p class="font-label text-primary uppercase tracking-[0.5em] text-xs font-bold">Phase 1: Capital Formation</p>
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter">Fueling the Infrastructure Phase</h2>
+<p class="text-on-surface-variant max-w-3xl mx-auto text-lg font-light">We are running a Kickstarter-style campaign to purchase dedicated H100 clusters and finalize our primary facility. Secure elite speeds at founder rates by backing the build.</p>
+</div>
+<!-- Campaign Tracker -->
+<div class="max-w-4xl mx-auto mb-24 glass-panel p-10 rounded-2xl">
+<div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+<div class="space-y-1">
+<span class="text-4xl font-black text-white">$13,000</span>
+<p class="text-[10px] font-label text-on-surface-variant uppercase tracking-[0.2em]">Raised toward $50,000 USD Target</p>
+</div>
+<div class="text-right">
+<span class="text-2xl font-bold text-primary">26% Complete</span>
+<p class="text-[10px] font-label text-on-surface-variant uppercase tracking-[0.2em]">Hardware Lock-in imminent</p>
+</div>
+</div>
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden border border-white/5 p-1">
+<div class="h-full kinetic-gradient w-[26%] rounded-full shadow-[0_0_20px_rgba(163,255,18,0.5)]"></div>
+</div>
+<div class="mt-6 text-center">
+<p class="text-xs text-on-surface-variant italic">All backer perks active for a limited time during pre-operation phase. <span class="text-primary font-bold">200 tokens/sec guaranteed for all tiers.</span></p>
+</div>
+</div>
+<!-- Backer Perks Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Tier 1 -->
+<div class="bg-surface-container p-8 border border-white/5 rounded-xl hover:border-primary/30 transition-colors group">
+<div class="mb-6">
+<h4 class="text-3xl font-black">$23</h4>
+<p class="text-[10px] font-label uppercase tracking-widest text-primary font-bold">Base Backer</p>
+</div>
+<ul class="space-y-4 mb-8 text-xs text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="timer">timer</span> 1 Week Unlimited</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span> 200 Tokens/Second</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="shield">shield</span> Privacy Guard</li>
+</ul>
+<button class="w-full py-3 rounded bg-white/5 text-white font-bold text-[10px] uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">Back Tier</button>
+</div>
+<!-- Tier 2 -->
+<div class="bg-surface-container p-8 border border-white/5 rounded-xl hover:border-primary/30 transition-colors group">
+<div class="mb-6">
+<h4 class="text-3xl font-black">$30</h4>
+<p class="text-[10px] font-label uppercase tracking-widest text-primary font-bold">Qwen Advocate</p>
+</div>
+<ul class="space-y-4 mb-8 text-xs text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="calendar_month">calendar_month</span> 1 Month Unlimited</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="memory">memory</span> Qwen 3.5:122B</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span> 200 Tokens/Second</li>
+</ul>
+<button class="w-full py-3 rounded bg-white/5 text-white font-bold text-[10px] uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">Back Tier</button>
+</div>
+<!-- Tier 3 -->
+<div class="bg-surface-container-high border-2 border-primary/40 p-8 rounded-xl relative">
+<div class="absolute -top-3 right-4 kinetic-gradient px-3 py-1 rounded-full text-[8px] font-black uppercase text-on-primary">High Value</div>
+<div class="mb-6">
+<h4 class="text-3xl font-black">$45</h4>
+<p class="text-[10px] font-label uppercase tracking-widest text-primary font-bold">Elite Backer</p>
+</div>
+<ul class="space-y-4 mb-8 text-xs text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="event_available">event_available</span> 3 Months FREE Usage</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="memory">memory</span> Qwen 3.5:122B</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span> 200 Tokens/Second</li>
+</ul>
+<button class="w-full py-3 rounded kinetic-gradient text-on-primary font-bold text-[10px] uppercase tracking-widest hover:opacity-90 transition-all">Back Tier</button>
+</div>
+<!-- Tier 4 -->
+<div class="bg-surface-container p-8 border border-white/5 rounded-xl hover:border-primary/30 transition-colors group">
+<div class="mb-6">
+<h4 class="text-3xl font-black">$100</h4>
+<p class="text-[10px] font-label uppercase tracking-widest text-primary font-bold">Model Sovereign</p>
+</div>
+<ul class="space-y-4 mb-8 text-xs text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="all_inclusive">all_inclusive</span> 3 Months Unlimited</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="list">list</span> Any Model in Stack</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span> 200 Tokens/Second</li>
+</ul>
+<button class="w-full py-3 rounded bg-white/5 text-white font-bold text-[10px] uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">Back Tier</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Phase 2: Monthly Subscriptions Section (Updated Pricing) -->
+<section class="py-40 px-6 relative overflow-hidden" id="founding-offer">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 blur-[160px] rounded-full pointer-events-none"></div>
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20 space-y-4">
+<p class="font-label text-primary uppercase tracking-[0.5em] text-xs font-bold">Phase 2: Operational Scale</p>
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter">Standard Subscriptions</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg font-light">These operational plans activate automatically once the $50k funding goal is reached and the 14-day hardware setup is complete.</p>
+</div>
+<!-- Founders Perks Grid (Preserved) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-20">
+<div class="bg-surface-container p-8 border border-white/10 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="workspace_premium">workspace_premium</span>
+<h4 class="font-bold mb-2">Legacy Status</h4>
+<p class="text-xs text-on-surface-variant font-light leading-relaxed">Lifetime lowest rate guarantee. Your monthly subscription price will never increase, even as infrastructure costs rise.</p>
+</div>
+<div class="bg-surface-container p-8 border border-white/10 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="bolt">bolt</span>
+<h4 class="font-bold mb-2">Priority Concurrency</h4>
+<p class="text-xs text-on-surface-variant font-light leading-relaxed">Higher simultaneous request limits than future standard tiers, ensuring your production workflows always have head-room.</p>
+</div>
+<div class="bg-surface-container p-8 border border-white/10 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="science">science</span>
+<h4 class="font-bold mb-2">Beta Access</h4>
+<p class="text-xs text-on-surface-variant font-light leading-relaxed">First to test next-gen models (like DeepSeek V4) before they are released to the general tier.</p>
+</div>
+<div class="bg-surface-container p-8 border border-white/10 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="how_to_vote">how_to_vote</span>
+<h4 class="font-bold mb-2">Governance Rights</h4>
+<p class="text-xs text-on-surface-variant font-light leading-relaxed">Exclusive access to the Founder Discord role and direct voting rights on the next model to be deployed.</p>
+</div>
+</div>
+<!-- Pricing Tiers -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Tier 1 -->
+<div class="bg-surface-container-high p-12 rounded-xl border-2 border-white/5 hover:border-primary/20 transition-all relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-surface-container-highest border border-white/10 px-4 py-1 rounded-full text-[10px] font-label uppercase tracking-widest text-primary">Core Operational</div>
+<div class="mb-10 text-center">
+<h3 class="text-2xl font-bold mb-2">Core Access</h3>
+<div class="flex items-center justify-center gap-1">
+<span class="text-4xl font-black">$23</span>
+<span class="text-on-surface-variant text-sm">/mo</span>
+</div>
+</div>
+<ul class="space-y-4 mb-12 text-sm text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span> Any 100B Parameter Model</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span> DeepSeek V3 API Access</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span> 5 Concurrent Requests</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg" data-icon="star">star</span> All Founding 10K Perks</li>
+</ul>
+<button class="w-full py-4 rounded bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-neutral-200 transition-colors">Pre-Subscribe</button>
+</div>
+<!-- Tier 2 -->
+<div class="bg-surface-container-high p-12 rounded-xl border-2 border-primary/50 shadow-[0_0_40px_rgba(163,255,18,0.1)] relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 kinetic-gradient px-4 py-1 rounded-full text-[10px] font-label uppercase tracking-widest text-on-primary font-bold">Production Scaling</div>
+<div class="mb-10 text-center">
+<h3 class="text-2xl font-bold mb-2">High Concurrency</h3>
+<div class="flex items-center justify-center gap-1">
+<span class="text-4xl font-black">$45</span>
+<span class="text-on-surface-variant text-sm">/mo</span>
+</div>
+</div>
+<ul class="space-y-4 mb-12 text-sm text-on-surface-variant">
+<li class="flex items-center gap-3 font-bold text-on-surface"><span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span> Any 100B Parameter Model</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span> 20 Concurrent Requests</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span> High-Priority Response Queue</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg" data-icon="star">star</span> All Founding 10K Perks</li>
+</ul>
+<button class="w-full py-4 rounded kinetic-gradient text-on-primary font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity">Pre-Subscribe</button>
+</div>
+</div>
+<div class="mt-16 text-center text-on-surface-variant text-[11px] font-label uppercase tracking-[0.2em] max-w-xl mx-auto border-t border-white/5 pt-8">
+<p>Custom enterprise pricing available for more models, 400B+ parameter sizes, and even faster token speeds. Contact our infra team for bespoke clusters.</p>
+</div>
+</div>
+</section>
+<!-- NEW SECTION: The Only Subscription You Need -->
+<section class="py-40 px-6 relative overflow-hidden bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="glass-panel p-16 md:p-24 rounded-3xl relative border-primary/20 overflow-hidden shadow-[0_0_80px_rgba(163,255,18,0.05)]">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="max-w-3xl relative z-10">
+<p class="font-label text-primary uppercase tracking-[0.4em] text-xs font-bold mb-6">Financial Consolidation</p>
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-10">The Only Subscription <br/>You Need.</h2>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed mb-12">
+                        Replace 100s of random AI subscriptions and your ChatGPT bill. One flat fee for everything. We are building the unified backend for the open-source era, compatible with Open WebUI, and various modern frontends so you can own your interface while we handle the compute.
+                    </p>
+<div class="flex flex-wrap gap-8">
+<div class="flex items-center gap-4 py-3 px-6 rounded-full bg-white/5 border border-white/10">
+<span class="material-symbols-outlined text-primary" data-icon="money_off">money_off</span>
+<span class="text-sm font-bold tracking-widest uppercase font-label">No Metered Billing</span>
+</div>
+<div class="flex items-center gap-4 py-3 px-6 rounded-full bg-white/5 border border-white/10">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+<span class="text-sm font-bold tracking-widest uppercase font-label">Unified Backend</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW SECTION: Universal Compatibility & Privacy -->
+<section class="py-40 px-6 relative overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-12">
+<div>
+<p class="font-label text-primary uppercase tracking-[0.4em] text-xs font-bold mb-6">Dev-First Integration</p>
+<h2 class="text-5xl md:text-6xl font-black tracking-tighter leading-[0.9]">Universal Compatibility <br/>&amp; Privacy.</h2>
+</div>
+<p class="text-xl text-on-surface-variant font-light leading-relaxed">
+                        Fully compatible with Chat Completions, Codex, and OpenAI-style APIs. Built to integrate with Claude Code, Zenflow, and your entire dev stack.
+                    </p>
+<!-- 5 Pillars of Privacy -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+<div class="space-y-4">
+<h4 class="font-label text-[10px] uppercase tracking-[0.3em] text-primary font-bold border-b border-primary/20 pb-2 mb-4">5 Pillars of Privacy</h4>
+<div class="flex items-center gap-3">
+<span class="text-[12px] font-bold text-white">1. Zero-Data Retention</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[12px] font-bold text-white">2. Hardware-Isolated Sessions</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[12px] font-bold text-white">3. No Training Logs</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[12px] font-bold text-white">4. Private GPU Clusters</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[12px] font-bold text-white">5. Sovereign Infrastructure</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Compatibility Grid/Marquee -->
+<div class="relative bg-surface-container-high/50 p-10 rounded-2xl border border-white/5 backdrop-blur-sm">
+<div class="grid grid-cols-4 sm:grid-cols-5 gap-6 opacity-60">
+<!-- Placeholders for tool icons -->
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Claude Code</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Zenflow</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Cursor</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">VS Code</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">JetBrains</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Obsidian</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Logseq</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Raycast</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Alfred</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Flow Launcher</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">TypingMind</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">SillyTavern</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">LibreChat</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Open WebUI</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">AnythingLLM</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Jan</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Ollama</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">LangChain</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">Flowise</div>
+</div>
+<div class="aspect-square flex flex-col items-center justify-center gap-2 grayscale hover:grayscale-0 transition-all">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">LlamaIndex</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center opacity-40">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center font-bold text-[8px] text-center p-1">AutoGPT</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-high/80 to-transparent pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Proposition -->
+<section class="py-40 px-6 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-24 items-center">
+<div class="flex-1 space-y-8">
+<p class="font-label text-primary uppercase tracking-[0.4em] text-[10px] font-bold">The Logic</p>
+<h2 class="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]">Predictable <br/>Infrastructure</h2>
+<p class="text-on-surface-variant leading-relaxed text-xl font-light">
+                    Public cloud providers tax your innovation with per-token billing. We are building a community-funded cluster dedicated to elite, flat-fee open-source hosting.
+                </p>
+<div class="grid grid-cols-2 gap-12 pt-10">
+<div>
+<span class="text-4xl font-black text-white">$0</span>
+<p class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant mt-3">Variable Surcharge</p>
+</div>
+<div>
+<span class="text-4xl font-black text-white">100%</span>
+<p class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant mt-3">Open Source Stack</p>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="absolute inset-0 bg-primary/10 blur-[100px] -z-10"></div>
+<div class="bg-surface-container-high rounded-2xl p-1 overflow-hidden border border-white/5 shadow-2xl">
+<img alt="Abstract 3D digital art" class="w-full rounded-[14px] shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9qFh8AETuAoiOdHZSZlDNVxXdjmct-xTs2EBoW8vuJvDLqx7kHmgWecPA9n20wmS7tP2XwrVHTYGN_4tOfmxPG-nKTXSPXIGmhwnMRFWcJeFWDXuqmn8tPE4AFPbCebWdjKArZSntWCQwqekijMIRQd84TLeuv86HoKupbu3UzNzGSsDazANXhLObrHR8u0LjmuCP5oUNbJseiUgz0A_R3RYzneuNCHogV6hU-hHqlvpqKHp0pn0UJkUCZzl-5YOBSCUF8ZNrpvw"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Privacy Pillar -->
+<section class="py-40 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<img alt="Secure computer chip macro" class="rounded-xl shadow-2xl opacity-70 border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9u8I8Zt8BbMHoT4A_xyyEIy6oMF5ybA3KFQrPWxG16qeSSN6SNRUSKaFnWFH9WTlpkfmn_mn-RfxjPfHpuxehjM5m_ipOC2UT-dHnQdVDQLiCLJXrwLay2OrzzDEL11ktzSM8NPwBh9BnPTfqlLa50WYSVBleRgbYEKC5DaUEopsjUcCLGyDlhP7De_uZV8WAyjHJLJDRvgtiQJtMh4pjTW6e7E4kPgR0u3PWkpAmKZ_BzSHoCavIqtfwkDgjkUzSRQ18bLC2LcY"/>
+<div class="absolute -bottom-10 -right-10 glass-panel p-10 rounded-xl max-w-xs shadow-2xl">
+<span class="material-symbols-outlined text-primary text-3xl mb-5" data-icon="verified_user">verified_user</span>
+<p class="text-[10px] font-label uppercase tracking-[0.3em] text-primary mb-3">Zero-Data Retention</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">We don't log. We don't train. Your prompts remain in volatile memory and vanish upon completion.</p>
+</div>
+</div>
+<div class="space-y-10">
+<h2 class="text-5xl md:text-6xl font-extrabold tracking-tighter leading-[0.9]">Your Data is Not <br/>the Product.</h2>
+<p class="text-on-surface-variant text-xl leading-relaxed font-light">
+                    BLACKONIX operates on private infrastructure where data persistence is physically disabled. We do not use your inputs to improve models.
+                </p>
+<ul class="space-y-6">
+<li class="flex gap-5 items-start">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="check_circle">check_circle</span>
+<div>
+<h4 class="font-bold text-lg">No Training Logs</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">We never ingest user interaction data for model refinement.</p>
+</div>
+</li>
+<li class="flex gap-5 items-start">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="lock">lock</span>
+<div>
+<h4 class="font-bold text-lg">Hardware-Isolated Sessions</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Each request is handled in a transient environment that is wiped immediately.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Funding Tracker (Maintained as secondary overview) -->
+<section class="py-40 px-6">
+<div class="max-w-4xl mx-auto bg-surface-container-high rounded-xl p-16 relative overflow-hidden border border-white/5">
+<div class="absolute top-0 right-0 w-80 h-80 bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="relative z-10 space-y-16">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="space-y-3">
+<p class="font-label text-primary uppercase tracking-[0.4em] text-[10px] font-bold">Launch Roadmap</p>
+<h2 class="text-4xl font-bold tracking-tight">Current Capacity</h2>
+</div>
+<div class="text-right">
+<span class="text-6xl font-black text-white">4,281</span>
+<p class="text-[10px] font-label text-on-surface-variant mt-3 uppercase tracking-[0.2em]">Founding Backers Secured</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="w-full h-3 bg-surface-container-lowest rounded-full overflow-hidden border border-white/5">
+<div class="h-full kinetic-gradient w-[42%] rounded-full shadow-[0_0_25px_rgba(163,255,18,0.4)]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-label text-on-surface-variant uppercase tracking-[0.3em]">
+<span>Founding Limit: 10,000 Seats</span>
+<span>Remaining: 5,719 Seats</span>
+</div>
+</div>
+<div class="flex justify-center pt-8">
+<a class="kinetic-gradient px-14 py-6 rounded text-on-primary font-black text-xl hover:scale-105 transition-transform active:scale-95 shadow-xl" href="#crowdfunding">
+                        Secure My Founder Seat
+                    </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-16 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-10">
+<div class="font-label font-bold text-white text-lg tracking-tighter">BLACKONIX AI</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-label text-[10px] uppercase tracking-widest text-neutral-500 hover:text-primary transition-colors" href="#">Mission</a>
+<a class="font-label text-[10px] uppercase tracking-widest text-neutral-500 hover:text-primary transition-colors" href="#">Models</a>
+<a class="font-label text-[10px] uppercase tracking-widest text-neutral-500 hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-label text-[10px] uppercase tracking-widest text-neutral-500 hover:text-primary transition-colors" href="#">Funding</a>
+<a class="font-label text-[10px] uppercase tracking-widest text-neutral-500 hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+<div class="font-label text-[10px] uppercase tracking-widest text-neutral-600">
+            © 2024 BLACKONIX AI. Open &amp; Sustainable.
+        </div>
+</div>
+</footer>
+</body></html>
