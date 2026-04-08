@@ -74,7 +74,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-background text-foreground">
+    <html lang="en" className="dark">
       <head>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
@@ -82,14 +82,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
-      <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} bg-background font-sans text-foreground antialiased`}
-      >
-        <a href="#main-content" className="skip-link">
-          Skip to content
-        </a>
-        {children}
-      </body>
+      <body className={`${manrope.variable} ${spaceGrotesk.variable} font-body selection:bg-primary selection:text-on-primary`}>{children}</body>
     </html>
   );
 }
