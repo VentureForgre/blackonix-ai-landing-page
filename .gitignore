@@ -5,6 +5,14 @@ dist/
 build/
 .cache/
 coverage/
+.env.local
+.env*.local
+prisma/dev.db
+prisma/dev.db-journal
+prisma/*.db
+prisma/*.db-journal
+data/*.db
+data/*.db-journal
 *.tsbuildinfo
 *.log
 .next-dev.log
