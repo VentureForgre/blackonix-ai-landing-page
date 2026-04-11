@@ -45,6 +45,16 @@ test("login page sign-up prompt points to the sign-up route", async () => {
   );
 });
 
+test("login page removes the luminescent architect tagline", async () => {
+  const loginHtml = await loadPage(loginHtmlPath);
+
+  assert.doesNotMatch(
+    loginHtml,
+    /The Luminescent Architect/,
+    "Expected login page tagline to be removed"
+  );
+});
+
 test("sign page renders directly from the uploaded sign HTML source", async () => {
   const signPage = await loadPage(signPagePath);
 
@@ -60,5 +70,26 @@ test("sign page login prompt points to the login route", async () => {
     signHtml,
     /<a[^>]*href="\/login"[^>]*>\s*Log In\s*<\/a>/,
     "Expected sign page Log In prompt to link to /login"
+  );
+});
+
+test("sign page uses the updated sign-up form copy", async () => {
+  const signHtml = await loadPage(signHtmlPath);
+
+  assert.doesNotMatch(
+    signHtml,
+    /The Luminescent Architect/,
+    "Expected sign page tagline to be removed"
+  );
+  assert.match(signHtml, />Sign Up<\/h1>/, "Expected sign page heading to be Sign Up");
+  assert.doesNotMatch(signHtml, /Full Name/, "Expected full name field to be removed");
+  assert.match(signHtml, />Email<\/label>/, "Expected email label to be Email");
+  assert.doesNotMatch(signHtml, /Secure Email/, "Expected secure email label to be removed");
+  assert.match(signHtml, />Password<\/label>/, "Expected password label to be Password");
+  assert.doesNotMatch(signHtml, /Access Key/, "Expected access key label to be removed");
+  assert.match(
+    signHtml,
+    />Confirm Password<\/label>/,
+    "Expected confirm password field to be present"
   );
 });
