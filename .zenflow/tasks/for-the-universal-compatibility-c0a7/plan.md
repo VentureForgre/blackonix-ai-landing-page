@@ -32,5 +32,5 @@ Update `{@artifacts_path}/plan.md` if it makes sense to have a plan and task has
 ### [x] Step: Update compatibility tool data and layout
 Refresh the Universal Compatibility section so each listed integration has an explicit icon mapping and the grid renders as three rows instead of the current uneven stack. Keep the privacy pillar content aligned with the visual treatment already established in the stitched reference.
 
-### [ ] Step: Verify, sync plan, and ship
+### [x] Step: Verify, sync plan, and ship
 Run targeted tests plus repo verification for the updated compatibility section, then mark the work complete here and push the change directly to `main` as requested.
