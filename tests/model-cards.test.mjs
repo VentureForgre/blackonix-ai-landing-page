@@ -55,6 +55,6 @@ test("each model card deploy CTA links to the login page", async () => {
 test("login page route exists for model deployment redirects", async () => {
   const loginPage = await loadLoginPage();
 
-  assert.match(loginPage, /export default function LoginPage/);
-  assert.match(loginPage, /Sign in to deploy/i);
+  assert.match(loginPage, /export default async function LoginPage/);
+  assert.match(loginPage, /stitch_blackonix_ai_crowdfunding_login/);
 });

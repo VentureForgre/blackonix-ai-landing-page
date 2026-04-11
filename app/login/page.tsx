@@ -1,29 +1,7 @@
-import { AuthShell } from "../../components/auth/auth-shell";
+import { loadHtmlPageBody } from "../../lib/html-page";
 
-export default function LoginPage() {
-  return (
-    <AuthShell
-      eyebrow="Access Gateway"
-      title="Sign in to deploy"
-      description="Authenticate to launch a hosted model endpoint and continue into the BLACKONIX deployment flow."
-      fields={[
-        {
-          label: "Email Address",
-          placeholder: "name@domain.com",
-          type: "email"
-        },
-        {
-          label: "Password",
-          placeholder: "••••••••••••",
-          type: "password"
-        }
-      ]}
-      auxiliaryHref="/"
-      auxiliaryLabel="Forgot Password"
-      submitLabel="Sign In"
-      alternatePrompt="Don't have an account?"
-      alternateHref="/sign"
-      alternateLabel="Sign Up"
-    />
-  );
+export default async function LoginPage() {
+  const { bodyClassName, bodyMarkup } = await loadHtmlPageBody("stitch_blackonix_ai_crowdfunding_login");
+
+  return <div className={bodyClassName} dangerouslySetInnerHTML={{ __html: bodyMarkup }} />;
 }
