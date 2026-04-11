@@ -267,34 +267,112 @@ export const landingPageContent = {
     description:
       "Fully compatible with Chat Completions, Codex, and OpenAI-style APIs. Built to integrate with Claude Code, Zenflow, and your entire dev stack.",
     privacyPillars: [
-      "1. Zero-Data Retention",
-      "2. Hardware-Isolated Sessions",
-      "3. No Training Logs",
-      "4. Private GPU Clusters",
-      "5. Sovereign Infrastructure"
+      {
+        icon: "security",
+        label: "1. Zero-Data Retention"
+      },
+      {
+        icon: "memory",
+        label: "2. Hardware-Isolated Sessions"
+      },
+      {
+        icon: "block",
+        label: "3. No Training Logs"
+      },
+      {
+        icon: "dns",
+        label: "4. Private GPU Clusters"
+      },
+      {
+        icon: "shield",
+        label: "5. Sovereign Infrastructure"
+      }
     ],
     tools: [
-      "Claude Code",
-      "Zenflow",
-      "Cursor",
-      "VS Code",
-      "JetBrains",
-      "Obsidian",
-      "Logseq",
-      "Raycast",
-      "Alfred",
-      "Flow Launcher",
-      "TypingMind",
-      "SillyTavern",
-      "LibreChat",
-      "Open WebUI",
-      "AnythingLLM",
-      "Jan",
-      "Ollama",
-      "LangChain",
-      "Flowise",
-      "LlamaIndex",
-      "AutoGPT"
+      {
+        icon: "claude",
+        label: "Claude Code"
+      },
+      {
+        icon: "zenflow",
+        label: "Zenflow"
+      },
+      {
+        icon: "cursor",
+        label: "Cursor"
+      },
+      {
+        icon: "vscode",
+        label: "VS Code"
+      },
+      {
+        icon: "jetbrains",
+        label: "JetBrains"
+      },
+      {
+        icon: "obsidian",
+        label: "Obsidian"
+      },
+      {
+        icon: "logseq",
+        label: "Logseq"
+      },
+      {
+        icon: "raycast",
+        label: "Raycast"
+      },
+      {
+        icon: "alfred",
+        label: "Alfred"
+      },
+      {
+        icon: "flow-launcher",
+        label: "Flow Launcher"
+      },
+      {
+        icon: "typingmind",
+        label: "TypingMind"
+      },
+      {
+        icon: "sillytavern",
+        label: "SillyTavern"
+      },
+      {
+        icon: "librechat",
+        label: "LibreChat"
+      },
+      {
+        icon: "open-webui",
+        label: "Open WebUI"
+      },
+      {
+        icon: "anythingllm",
+        label: "AnythingLLM"
+      },
+      {
+        icon: "jan",
+        label: "Jan"
+      },
+      {
+        icon: "ollama",
+        label: "Ollama"
+      },
+      {
+        icon: "langchain",
+        label: "LangChain"
+      },
+      {
+        icon: "flowise",
+        label: "Flowise"
+      },
+      {
+        icon: "llamaindex",
+        label: "LlamaIndex"
+      },
+      {
+        icon: "autogpt",
+        label: "AutoGPT"
+      }
     ]
   },
   proposition: {

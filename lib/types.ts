@@ -33,6 +33,11 @@ export type HighlightCard = {
   description: string;
 };
 
+export type CompatibilityTool = {
+  icon: string;
+  label: string;
+};
+
 export type PreviewCard = {
   label?: string;
   icon?: string;
@@ -107,8 +112,8 @@ export type LandingPageContent = {
     eyebrow: string;
     title: string;
     description: string;
-    privacyPillars: ReadonlyArray<string>;
-    tools: ReadonlyArray<string>;
+    privacyPillars: ReadonlyArray<IconListItem>;
+    tools: ReadonlyArray<CompatibilityTool>;
   };
   proposition: {
     id: string;
