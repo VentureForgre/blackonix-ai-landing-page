@@ -93,3 +93,13 @@ test("sign page uses the updated sign-up form copy", async () => {
     "Expected confirm password field to be present"
   );
 });
+
+test("sign page navbar removes the support link", async () => {
+  const signHtml = await loadPage(signHtmlPath);
+
+  assert.doesNotMatch(
+    signHtml,
+    />\s*Support\s*<\/a>/,
+    "Expected sign page navbar support link to be removed"
+  );
+});
