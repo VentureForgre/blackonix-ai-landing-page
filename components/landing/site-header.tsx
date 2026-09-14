@@ -54,7 +54,7 @@ export function SiteHeader({ brand, navItems }: SiteHeaderProps) {
           </summary>
           <div
             id="mobile-navigation"
-            className="absolute right-0 top-[calc(100%+12px)] w-64 rounded-2xl border border-white/8 bg-surface-container-high p-4 shadow-panel"
+            className="motion-dropdown-panel absolute right-0 top-[calc(100%+12px)] w-64 rounded-2xl border border-white/8 bg-surface-container-high p-4 shadow-panel"
           >
             <div className="flex flex-col gap-3">
               {navItems.map((item) => (

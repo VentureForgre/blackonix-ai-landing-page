@@ -84,7 +84,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
                 fill
                 priority
                 sizes="(max-width: 767px) 100vw, 66vw"
-                className="object-cover opacity-40 grayscale transition duration-1000 hover:grayscale-0"
+                className="object-cover opacity-40 grayscale transition duration-1000 hover:duration-(--duration-very-slow) hover:grayscale-0"
               />
               <div
                 aria-hidden="true"

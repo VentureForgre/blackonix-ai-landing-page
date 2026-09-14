@@ -95,7 +95,7 @@ export function PaymentModal({ tiers }: PaymentModalProps) {
     >
       <button
         type="button"
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="motion-modal-overlay absolute inset-0 bg-black/70 backdrop-blur-sm"
         aria-label="Close payment confirmation"
         onClick={() => {
           setSelectedTierId(null);
@@ -103,7 +103,7 @@ export function PaymentModal({ tiers }: PaymentModalProps) {
         }}
       />
 
-      <div className="glass-panel relative z-[101] w-full max-w-lg rounded-[1.5rem] border border-white/10 p-8 text-left shadow-[0_0_60px_rgba(0,0,0,0.45)]">
+      <div className="motion-modal-panel glass-panel relative z-[101] w-full max-w-lg rounded-[1.5rem] border border-white/10 p-8 text-left shadow-[0_0_60px_rgba(0,0,0,0.45)]">
         <div className="mb-6 flex items-start justify-between gap-4">
           <div>
             <p className="font-label text-[10px] uppercase tracking-[0.3em] text-primary">
